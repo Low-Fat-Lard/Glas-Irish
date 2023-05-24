@@ -1,0 +1,138 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <style>
+            body {
+                overflow: hidden;
+                /* Hide scrollbars */
+                background: #dad7cd;
+                color:#344e41;
+            }
+
+            .hidden {
+                display: none !important;
+            }
+
+            #onhover {
+                background-color: rgba(0, 0, 0, 0.9);
+                color: rgb(200, 200, 200);
+                font-family: 'Courier New', Courier, monospace;
+                word-wrap: normal;
+                width: auto;
+                max-width: 400px;
+                position: absolute;
+                z-index: 1;
+                padding: 10px;
+                cursor: default;
+            }
+            .world-select {
+                max-width: 940px;
+                width: 100%;
+                left:0;
+                right:0;
+                min-width: 300px;
+                height: calc(100vh - 220px);
+                position: absolute;
+                bottom: 120px;
+                overflow-y: auto;
+                background-color: RGBA(0, 0, 0, 0.6);
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .blog {
+                max-width: 800px;
+                width: 100%;
+                left:0;
+                right:0;
+                min-width: 300px;
+                height: calc(100% - 100px);
+                padding: 10px;
+                position: absolute;
+                bottom: 70px;
+                overflow-y: auto;
+                background-color: lightgray;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            input[type=text] {
+                background-color: black;
+                caret-color: white;
+                border: none;
+                border-bottom: 4px solid #588157;
+                color: white;
+                font-size: 24px;
+                padding-left: 12px;
+            }
+            input[type=text]:focus {
+                border-bottom: 4px solid lightgray;
+                outline: none;
+            }
+            .header {
+                max-width: 940px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            #boxcentertop {
+                z-index: 1;
+                width: 80vw;
+                max-width: 400px;
+                height: 50px;
+                position: relative;
+                top: 30px;
+                display: block;
+            }
+            .world {
+                background: RGBA(71, 77, 61, 0.6);
+                max-width: 900px;
+                width: 90%;
+                height: auto;
+                font-size: 18px;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(180, 180, 180);
+                margin: 0 auto;
+                margin-top: 15px;
+                padding: 15px;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+            .selected {
+                border: 3px solid #dad7cd;
+                padding: 12px;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #888; 
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+            }
+        </style>
+        <div class="header">
+            <input type="text" id="boxcentertop" spellcheck="false">
+        </div>
+        <canvas id="content" width="600" height="1000" style="position: absolute; top: 0px; left: 0px"></canvas>
+        <div class="blog hidden" id="blog"></div>
+        <div class="world-select" id="worlds"></div>
+        <div id="onhover" class="hidden"></div>
+        <script src="data.js"></script>
+        <script src="main.js"></script>
+        <script src="index.js"></script>
+        <script src="button.js"></script>
+    </body>
+
+    </html>
